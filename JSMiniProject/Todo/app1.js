@@ -59,6 +59,5 @@ ul.addEventListener("click", function(event){
         let item = event.target.parentElement;
         item.remove();
         console.log("item deleted");
-    }
-   
-})
+    };
+});
