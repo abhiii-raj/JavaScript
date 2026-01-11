@@ -1,0 +1,129 @@
+/* Universe Black Theme with Floating Stars */
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", "Segoe UI", sans-serif;
+  background: #000; /* Deep space black */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden; /* Hide overflowing stars */
+  color: #fff;
+}
+
+/* Star animation */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white, transparent) 1px 1px;
+  background-size: 3px 3px;
+  animation: starfield 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes starfield {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
+}
+
+/* Container */
+body > * {
+  position: relative;
+  z-index: 1; /* Keep app above stars */
+  width: 100%;
+  max-width: 500px;
+  margin-top: 50px;
+  background: rgba(20, 20, 20, 0.85);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #00ffff; /* Neon cyan */
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Input + Add button */
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #111;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #00ffff;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background: #00ffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #ff00ff; /* Neon magenta hover */
+  transform: scale(1.05);
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+
+/* Delete button */
+.delete {
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.delete:hover {
+  background: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}

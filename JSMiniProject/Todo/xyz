@@ -1,0 +1,44 @@
+let btn = document.querySelector("button");
+let inp = document.querySelector("input")
+let ul = document.querySelector("ul");
+
+
+// btn.addEventListener("click", function(){
+//     console.log("btn was clicked");
+// });
+
+// inp.addEventListener("click", function(){
+//     console.log("input was clicked");
+// });
+
+// ul.addEventListener("click", function(){
+//     console.log("ul was clicked");
+// });
+
+// inp.addEventListener("change", function(event){
+
+// })
+
+
+btn.addEventListener("click", function(event){
+    let li = document.createElement("li");
+    let value = inp.value;
+    li.innerText = value;
+    
+    let dltBtn = document.createElement("button");
+    dltBtn.innerText = "delete";
+    dltBtn.classList.add("delete");
+
+    li.appendChild(dltBtn);
+    ul.appendChild(li);
+    inp.value = "";
+})
+
+
+let dltBtns = document.querySelectorAll(".delete");
+for(dltBtn of dltBtns){
+    dltBtn.addEventListener("click", function(){
+        let li = this.parentElement;
+        li.remove();
+    })
+}
