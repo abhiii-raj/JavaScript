@@ -13,7 +13,7 @@ saveToDb("raj");
 
 
 function saveTodb(data, success, failure){
-    let intSpeed = Math.floor(Math.random() * 6) + 1;
+    let intSpeed = Math.floor(Math.random() * 10) + 1;
     if(intSpeed > 4){
         success();
     }else{
